@@ -95,7 +95,7 @@ class MySubscribeCallback(SubscribeCallback):
             letter = pick_a_spot(spaces)
             Tx = [name, letter]
             message = printtojson(Tx)
-            pubnub.publish().channel('Channel-nogw0jge5').message(message).pn_async(my_publish_callback)
+            pubnub.publish().channel('PUBNUB CHANNEL HERE PLEASE CHECK').message(message).pn_async(my_publish_callback)
         elif message1 == "game over":
             print("game over")
             quit()
@@ -121,7 +121,7 @@ class MySubscribeCallback(SubscribeCallback):
                     Tx = [name, letter]
                     block = printtojson(Tx)
                     message = block
-                    pubnub.publish().channel('Channel-nogw0jge5').message(block).pn_async(my_publish_callback)
+                    pubnub.publish().channel('PUBNUB CHANNEL HERE PLEASE CHECK').message(block).pn_async(my_publish_callback)
 
 def check_hash(block):
     #print(132)
@@ -155,13 +155,14 @@ def main():
     
     pnconfig = PNConfiguration()
 
-    pnconfig.subscribe_key = 'sub-c-4a73beb8-6919-4861-bc1f-0059a3c34d1b'
-    pnconfig.publish_key = 'pub-c-0e667023-8d63-4cbd-9f26-5c4f58a94c03'
+    #pubnub key here
+    pnconfig.subscribe_key =
+    pnconfig.publish_key = 
     pnconfig.user_id = "alice"
     pubnub = PubNub(pnconfig)
     
     pubnub.add_listener(MySubscribeCallback())
-    pubnub.subscribe().channels('Channel-nogw0jge5').execute()   
+    pubnub.subscribe().channels('PUBNUB CHANNEL HERE PLEASE CHECK').execute()   
 
 
 if __name__ == '__main__': 
